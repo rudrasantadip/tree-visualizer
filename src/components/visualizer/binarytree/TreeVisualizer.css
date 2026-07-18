@@ -1,0 +1,130 @@
+/* ─── Wrapper ─────────────────────────────────── */
+.tv-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: #f8f8f8;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ─── Scrollable SVG area ─────────────────────── */
+.tv-scroll {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 16px;
+}
+
+/* ─── Empty state ─────────────────────────────── */
+.tv-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 340px;
+  color: #bbb;
+}
+
+.tv-empty p {
+  font-size: 13px;
+}
+
+/* ─── Stats badge (top-right index) ──────────── */
+.tv-stats {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  grid-template-columns: repeat(4,auto);
+  background: #fff;
+  border: 0.5px solid #e4e4e4;
+  border-radius: 10px;
+  padding: 16px 22px;
+  pointer-events: none;
+  z-index: 10;
+  column-gap: 12px;
+  row-gap:4px;
+}
+.tv-bias-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid;
+  animation: tv-float 2.6s ease-in-out infinite;
+  margin: 6px auto 0;
+  width: fit-content;
+}
+
+.tv-bias-badge--left,
+.tv-bias-badge--right {
+  background: #fff8e1;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+@keyframes tv-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+
+.tv-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.tv-stat-val {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  color: #111;
+  font-variant-numeric: tabular-nums;
+}
+
+.tv-stat-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.tv-stat-divider {
+  width: 0.5px;
+  height: 28px;
+  background: #e8e8e8;
+}
+
+/* ─── Tooltip ─────────────────────────────────── */
+.tv-tooltip {
+  position: absolute;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.tv-tooltip::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-bottom-color: #111;
+  border-top: none;
+}

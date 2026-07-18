@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    sans-serif;
+
+  background: #000;
+  color: white;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}

@@ -1,0 +1,41 @@
+/* ─── Reset ───────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f8f8f8;
+  color: #111;
+}
+
+/* ─── Shell ───────────────────────────────────── */
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ─── Main content ────────────────────────────── */
+.layout-main {
+  flex: 1;
+  min-width: 0;        /* prevent flex blowout */
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #f8f8f8;
+}
+
+/* ─── Mobile: leave room for the hamburger ────── */
+@media (max-width: 640px) {
+  .layout-main {
+    padding-top: 56px; /* clears the fixed mobile-menu-btn */
+  }
+}

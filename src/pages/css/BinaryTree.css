@@ -1,0 +1,165 @@
+/* ─── Page layout ─────────────────────────────── */
+.bt-page {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+  padding: 28px 28px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ─── Header ──────────────────────────────────── */
+.bt-header {
+  margin-bottom: 20px;
+}
+
+.bt-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: -0.02em;
+  margin: 0 0 4px;
+}
+
+.bt-subtitle {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+/* ─── Controls row ────────────────────────────── */
+.bt-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.bt-input {
+  height: 36px;
+  padding: 0 12px;
+  border: 0.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #111;
+  background: #fafafa;
+  outline: none;
+  min-width: 200px;
+  flex: 1;
+  max-width: 320px;
+  transition: border-color 160ms, background 160ms;
+}
+
+.bt-input:focus {
+  border-color: #8b1a3a;
+  background: #fff;
+}
+
+.bt-input::placeholder {
+  color: #bbb;
+}
+
+.bt-btn {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 0.5px solid #ddd;
+  transition: all 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.bt-btn-primary {
+  background: #8b1a3a;
+  color: #fff;
+  border-color: #8b1a3a;
+}
+
+.bt-btn-primary:hover {
+  background: #5c0f25;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(139, 26, 58, 0.25);
+}
+
+.bt-btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.bt-btn-ghost {
+  background: #fff;
+  color: #555;
+}
+
+.bt-btn-ghost:hover {
+  background: #f5f5f5;
+  color: #111;
+}
+
+/* ─── Color picker ────────────────────────────── */
+.bt-color-picker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.bt-color-label {
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-right: 2px;
+}
+
+.bt-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 140ms cubic-bezier(0.34, 1.56, 0.64, 1), border-color 140ms;
+}
+
+.bt-swatch:hover {
+  transform: scale(1.2);
+}
+
+.bt-swatch.selected {
+  border-color: #111;
+  transform: scale(1.1);
+}
+
+/* ─── Canvas area ─────────────────────────────── */
+.bt-canvas {
+  flex: 1;
+  min-height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ─── Responsive ──────────────────────────────── */
+@media (max-width: 640px) {
+  .bt-page {
+    padding: 16px 14px 12px;
+  }
+
+  .bt-controls {
+    gap: 6px;
+  }
+
+  .bt-input {
+    min-width: 140px;
+    max-width: 100%;
+  }
+
+  .bt-color-picker {
+    margin-left: 0;
+  }
+}
