@@ -10,7 +10,6 @@ import {
   GitBranch,
   GitFork,
   GitMerge,
-  List,
   ArrowRight,
   ArrowLeftRight,
   Share2,
