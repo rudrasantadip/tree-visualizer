@@ -1,8 +1,7 @@
-// models/avltree/avltree.ts
+
 import type { TreeNode } from "../binarytree/TreeNode";
 import { height } from "../binarytree/utils";
 
-// ─── Internal helpers ──────────────────────────────────────────────────────
 
 // Local subtree height (node itself, no root needed — cheap enough for
 // visualizer-scale trees). Empty subtree = 0.
@@ -62,7 +61,6 @@ function rebalance(node: TreeNode): TreeNode {
   return node;
 }
 
-// ─── Public API ────────────────────────────────────────────────────────────
 
 export function insert(root: TreeNode | null, data: number): TreeNode {
   if (!root) {
